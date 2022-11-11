@@ -2,3 +2,6 @@ Jen narychlo spíchnutý script pro stahování/porovnání přírustku uživate
 
 Vl. také slouží k testování [jaandrle/nodejsscript at dev/0.9](https://github.com/jaandrle/nodejsscript/tree/dev/0.9):
 - instalace: `npm install https://github.com/jaandrle/nodejsscript#dev/0.9`
+- spuštění: `./fedilist.js --help`
+
+Defaultně zpracovává instance na „.cz” doméně + „czech.social” + „boskovice.social”.
