@@ -1,0 +1,6 @@
+{
+  "include": [
+    "/home/jaandrle/.nvm/versions/node/v17.9.1/lib/node_modules/nodejsscript/index.d.ts",
+    "fedilist.js"
+  ]
+}

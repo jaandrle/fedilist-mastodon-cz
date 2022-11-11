@@ -1,0 +1,4 @@
+Jen narychlo spíchnutý script pro stahování/porovnání přírustku uživatelů dle [fedilist](http://demo.fedilist.com/instance?q=&ip=&software=mastodon&registrations=&onion=).
+
+Vl. také slouží k testování [jaandrle/nodejsscript at dev/0.9](https://github.com/jaandrle/nodejsscript/tree/dev/0.9):
+- instalace: `npm install https://github.com/jaandrle/nodejsscript#dev/0.9`
