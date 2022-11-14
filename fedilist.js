@@ -42,5 +42,5 @@ $.api()
 
 function usersCount(data){ return data.reduce((acc, row)=> acc+Number(row[3]), 0); }
 function fileToData(file_name){ return s.cat(file_name).split("\n").map(line=> line.split(",")).filter(([ _, state ])=> state==="up"); }
-function isCz(candidate){ return /\.cz$/.test(candidate) || candidate==="czech.social" || candidate==="boskovice.social"; }
+function isCz(candidate){ return /\.cz$/.test(candidate) || candidate==="czech.social" || candidate==="boskovice.social" || candidate==="fedi.skladka.net"; }
 function getDomainUsers(row){ if(!row) return [ null, 0 ]; const d= row[0]; const u= Number(row[3]); return [ d, u ]; }
