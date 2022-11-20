@@ -1,5 +1,11 @@
 #!/usr/bin/env nodejsscript
 /* jshint esversion: 11,-W097, -W040, module: true, node: true, expr: true, undef: true *//* global echo, $, pipe, s, fetch, cyclicLoop */
+const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
+	"ajtaci.club",
+	"boskovice.social",
+	"czech.social",
+	"fedi.skladka.net",
+];
 
 $.api()
 .command("compare-last", "Porovná dva posledni snapshoty (defaultně jen „.cz”)")
@@ -42,5 +48,5 @@ $.api()
 
 function usersCount(data){ return data.reduce((acc, row)=> acc+Number(row[3]), 0); }
 function fileToData(file_name){ return s.cat(file_name).split("\n").map(line=> line.split(",")).filter(([ _, state ])=> state==="up"); }
-function isCz(candidate){ return /\.cz$/.test(candidate) || candidate==="czech.social" || candidate==="boskovice.social" || candidate==="fedi.skladka.net"; }
+function isCz(candidate){ return /\.cz$/.test(candidate) || not_dot_cz.indexOf(candidate) !== -1; }
 function getDomainUsers(row){ if(!row) return [ null, 0 ]; const d= row[0]; const u= Number(row[3]); return [ d, u ]; }
