@@ -6,6 +6,8 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 	"boskovice.social",
 	"czech.social",
 	"fedi.skladka.net",
+	"lgbtcz.social",
+	"praha.social"
 ];
 
 $.api()
