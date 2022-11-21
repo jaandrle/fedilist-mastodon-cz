@@ -3,7 +3,7 @@ Tyto záznamy jsou získávány botem, který prochází fediversum (viz [FediLi
 Bohužel, autor zatím nevydal zdrojové kódy – i proto bych bral data opradu jen orientačně.
 
 Vl. také slouží k testování [jaandrle/nodejsscript at dev/0.9](https://github.com/jaandrle/nodejsscript/tree/dev/0.9):
-- instalace: `npm install https://github.com/jaandrle/nodejsscript#dev/0.9`
-- spuštění: `./fedilist.js --help`
+- instalace: `npm install https://github.com/jaandrle/nodejsscript#dev/0.9 --location=global`
+- spuštění (resp. zobrazení nápovědy): `./fedilist.js --help`
 
 Defaultně zpracovává instance na „.cz” doméně + např. „czech.social” (všechny přidané instance jsou v poli [`not_dot_cz`](./fedilist.js#L3)).

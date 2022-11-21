@@ -39,6 +39,7 @@ $.api()
 	$.exit(0);
 })
 .command("snapshot <name>", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
+.example("snapshot 2022-11-22")
 .action(function(name){
 	fetch("http://demo.fedilist.com/instance/csv?q=&ip=&software=mastodon&registrations=&onion=&sort=users")
 	.then(r=> r.text())
