@@ -13,10 +13,12 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 $.api()
 .command("compare-last", "Porovná dva posledni snapshoty (defaultně jen „.cz”)")
 .option("--all", "Zahrnout i ne-CZ.")
-.action(function({ all= false }= {}){
-	const [ previous, last ]= s.$()
+.option("--shift, -s", "prints nth compare (defaults to 0)")
+.action(function({ all= false, shift= 0 }= {}){
+	const [ name_previous, name_last ]= s.$()
 		.ls("./mastodon-list--*.csv")
-		.slice(-2)
+		.slice(-2 - shift);
+	const [ previous, last ]= [ name_previous, name_last ]
 		.map(fileToData)
 		.map(data=> all ? data : data.filter(([ domain ])=> isCz(domain)));
 
@@ -24,7 +26,7 @@ $.api()
 		".nadpis { color: yellow; }",
 		".list_item{ margin-left: 4; }",
 		".users { color: magenta; }",
-		".diff { color: gray; }",
+		".diff, .info { color: gray; }",
 	);
 	echo("%cUživatelé za instanci:", css.nadpis);
 	for(const row of last){
@@ -36,6 +38,7 @@ $.api()
 	const [ all_previous, all_last ]= [ previous, last ].map(usersCount);
 	echo("%cUživatelé celkem:", css.nadpis);
 	echo(`%c%c~${all_last}%c (%crozdíl ~${all_last-all_previous}%c)`, css.list_item, css.users, css.unset, css.diff, css.unset);
+	echo(`%cInfo: last snapshot is ${name_last} – previous is ${name_previous}`, css.info);
 	$.exit(0);
 })
 .command("snapshot <name>", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
