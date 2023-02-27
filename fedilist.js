@@ -13,8 +13,11 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 $.api()
 .command("compare-last", "Porovná dva posledni snapshoty (defaultně jen „.cz”)")
 .option("--all", "Zahrnout i ne-CZ.")
+.option("--only-changes", "Vypíše instance jen pokud došlo od posledního snapshotu ke změně.")
+.option("--limit [limit]", "Vypíše maximálně daný počet instancí (0 pro zrušení limitu)")
 .option("--shift, -s", "prints nth compare (defaults to 0)")
-.action(function({ all= false, shift= 0 }= {}){
+.action(function({ all= false, shift= 0, ["only-changes"]: onlyChanges= false, limit= 0 }= {}){
+	if(limit) limit+= 1;
 	const [ name_previous, name_last ]= s.$()
 		.ls("./mastodon-list--*.csv")
 		.slice(-2 - shift);
@@ -22,23 +25,36 @@ $.api()
 		.map(fileToData)
 		.map(data=> all ? data : data.filter(([ domain ])=> isCz(domain)));
 
-	const css= echo.css(
-		".nadpis { color: yellow; }",
-		".list_item{ margin-left: 4; }",
-		".users { color: magenta; }",
-		".diff, .info { color: gray; }",
-	);
-	echo("%cUživatelé za instanci:", css.nadpis);
+	const css= echo.css`
+		.h1 { color: lightblue; display: list-item; list-style: "# "; }
+		.h2 { color: yellow; display: list-item; list-style: "## "; }
+		.li { display: list-item; }
+		.users { color: magenta; }
+		.diff, .info { color: gray; }
+	`;
+	const number_style= new Intl.NumberFormat('cs-CZ', { notation: "compact" });
+	echo(`%c${all?"Všechny":"„České”"} instance`, css.h1);
+	echo("%cUživatelé za instanci:", css.h2);
 	for(const row of last){
 		const [ domain, users_now ]= getDomainUsers(row);
 		const [ , users_prev ]= getDomainUsers(previous.find(([ domain_prev ])=> domain_prev===domain));
-		echo(`%c${domain}: %c~${users_now}%c (%crozdíl ~${users_now-users_prev}%c)`, css.list_item, css.users, css.unset, css.diff, css.unset);
+		const diff= users_now-users_prev;
+		if(limit && !--limit) break;
+		if(onlyChanges && diff===0) continue;
+		echo(`%c${domain}: %c~${number_style.format(users_now)}%c (%crozdíl ~${number_style.format(diff)}%c)`,
+			css.li, css.users, css.unset, css.diff, css.unset);
 	}
 	
 	const [ all_previous, all_last ]= [ previous, last ].map(usersCount);
-	echo("%cUživatelé celkem:", css.nadpis);
-	echo(`%c%c~${all_last}%c (%crozdíl ~${all_last-all_previous}%c)`, css.list_item, css.users, css.unset, css.diff, css.unset);
-	echo(`%cInfo: last snapshot is ${name_last} – previous is ${name_previous}`, css.info);
+	echo("%cUživatelé celkem:", css.h2);
+	echo(`%c%c~%s%c (%crozdíl ~%s%c)`,
+		css.li, css.users, css.unset, css.diff, css.unset,
+		number_style.format(all_last),
+		number_style.format(all_last-all_previous)
+	);
+	echo(`%cInfo – porovnávají se snapshoty:`, css.h2+css.info);
+	echo(`%c${name_last}`, css.info+css.li);
+	echo(`%c${name_previous}`, css.info+css.li);
 	$.exit(0);
 })
 .command("snapshot <name>", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
