@@ -12753,7 +12753,7 @@ noridon.hostdon.ne.jp: ~0 (rozdíl ~0)
 atvfqyewjvwfvys6o667p3tkwexitn7ob42eoxa2wd27supk2f2dnryd.onion: ~0 (rozdíl ~0)
 social.greenwoodmedia.xyz: ~0 (rozdíl ~-5)
 Uživatelé celkem:
-~unset:all (rozdíl ~7,5 mil.)
+~7,5 mil. (rozdíl ~286 tis.)
 Info – porovnávají se snapshoty:
 ./mastodon-list--2023-02-27.csv
 ./mastodon-list--2023-01-25.csv

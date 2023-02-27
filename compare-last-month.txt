@@ -39,7 +39,7 @@ mastodon.zs-studanka.cz: ~1 (rozdíl ~1)
 rodina-sucha.cz: ~1 (rozdíl ~0)
 social.taborsky.cz: ~1 (rozdíl ~0)
 Uživatelé celkem:
-~unset:all (rozdíl ~11 tis.)
+~11 tis. (rozdíl ~282)
 Info – porovnávají se snapshoty:
 ./mastodon-list--2023-02-27.csv
 ./mastodon-list--2023-01-25.csv

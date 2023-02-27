@@ -47,11 +47,8 @@ $.api()
 	
 	const [ all_previous, all_last ]= [ previous, last ].map(usersCount);
 	echo("%cUživatelé celkem:", css.h2);
-	echo(`%c%c~%s%c (%crozdíl ~%s%c)`,
-		css.li, css.users, css.unset, css.diff, css.unset,
-		number_style.format(all_last),
-		number_style.format(all_last-all_previous)
-	);
+	echo(`%c%c~${number_style.format(all_last)}%c (%crozdíl ~${number_style.format(all_last-all_previous)}%c)`,
+		css.li, css.users, css.unset, css.diff, css.unset);
 	echo(`%cInfo – porovnávají se snapshoty:`, css.h2+css.info);
 	echo(`%c${name_last}`, css.info+css.li);
 	echo(`%c${name_previous}`, css.info+css.li);
