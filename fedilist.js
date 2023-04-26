@@ -38,7 +38,7 @@ $.api()
 		.users { color: magenta; }
 		.diff, .info { color: gray; }
 	`;
-	const number_style= new Intl.NumberFormat('cs-CZ', { notation: "compact" });
+	const number_style= new Intl.NumberFormat('cs-CZ', { notation: "compact", maximumFractionDigits: 2 });
 	echo(`%c${all?"Všechny":"„České”"} instance`, css.h1);
 	echo("%cUživatelé za instanci:", css.h2);
 	for(const row of last){

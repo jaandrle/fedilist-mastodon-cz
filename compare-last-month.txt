@@ -1,51 +1,57 @@
-[m# „České” instance[m
-[m## Uživatelé za instanci:[m
-[m- mastodonczech.cz: [m[m~4,7 tis.[m[m ([m[mrozdíl ~24[m[m)[m
-[m- mastodon.arch-linux.cz: [m[m~2,6 tis.[m[m ([m[mrozdíl ~104[m[m)[m
-[m- nasface.cz: [m[m~1,3 tis.[m[m ([m[mrozdíl ~0[m[m)[m
-[m- witter.cz: [m[m~1,2 tis.[m[m ([m[mrozdíl ~21[m[m)[m
-[m- cztwitter.cz: [m[m~606[m[m ([m[mrozdíl ~5[m[m)[m
-[m- mastodon.pirati.cz: [m[m~353[m[m ([m[mrozdíl ~1[m[m)[m
-[m- gomastodon.cz: [m[m~227[m[m ([m[mrozdíl ~227[m[m)[m
-[m- f.cz: [m[m~74[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.macsnet.cz: [m[m~52[m[m ([m[mrozdíl ~0[m[m)[m
-[m- toot.whatever.cz: [m[m~50[m[m ([m[mrozdíl ~0[m[m)[m
-[m- lgbtcz.social: [m[m~36[m[m ([m[mrozdíl ~1[m[m)[m
-[m- kompost.cz: [m[m~33[m[m ([m[mrozdíl ~-1[m[m)[m
-[m- boskovice.social: [m[m~22[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.1984.cz: [m[m~20[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.rozhlas.cz: [m[m~18[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.queerclub.cz: [m[m~17[m[m ([m[mrozdíl ~0[m[m)[m
-[m- fediverse.cz: [m[m~15[m[m ([m[mrozdíl ~15[m[m)[m
-[m- mastodon.urbancloud.cz: [m[m~13[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.telekomunikace.cz: [m[m~11[m[m ([m[mrozdíl ~0[m[m)[m
-[m- ajtaci.club: [m[m~9[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.posvic.cz: [m[m~7[m[m ([m[mrozdíl ~0[m[m)[m
-[m- social.meyer.cz: [m[m~6[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.starnet.cz: [m[m~4[m[m ([m[mrozdíl ~0[m[m)[m
-[m- blogator.com: [m[m~4[m[m ([m[mrozdíl ~0[m[m)[m
-[m- social.gwei.cz: [m[m~4[m[m ([m[mrozdíl ~0[m[m)[m
-[m- hatedon.1984.cz: [m[m~4[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.loutaci.cz: [m[m~3[m[m ([m[mrozdíl ~3[m[m)[m
-[m- spondr.cz: [m[m~3[m[m ([m[mrozdíl ~1[m[m)[m
-[m- social.toxwat.cz: [m[m~3[m[m ([m[mrozdíl ~1[m[m)[m
-[m- mastodon.hinata.cz: [m[m~3[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.starlink.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- social.bobek.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.train.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- kiklhorn.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.stan.cz: [m[m~2[m[m ([m[mrozdíl ~2[m[m)[m
-[m- mastodon.skorpil.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.kiklhorn.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.haxo.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mutant.cz: [m[m~2[m[m ([m[mrozdíl ~0[m[m)[m
-[m- rodina-sucha.cz: [m[m~1[m[m ([m[mrozdíl ~0[m[m)[m
-[m- mastodon.zs-studanka.cz: [m[m~1[m[m ([m[mrozdíl ~0[m[m)[m
-[m- social.taborsky.cz: [m[m~1[m[m ([m[mrozdíl ~0[m[m)[m
-[m- social.lukacern.cz: [m[m~1[m[m ([m[mrozdíl ~1[m[m)[m
-[m- petrzprahy.cz: [m[m~1[m[m ([m[mrozdíl ~1[m[m)[m
-[m## Uživatelé celkem:[m
-[m- [m[m~11 tis.[m[m ([m[mrozdíl ~406[m[m)[m
-[m## Info – porovnávají se snapshoty:[m
-[m- ./mastodon-list--2023-03-27.csv[m
-[m- ./mastodon-list--2023-02-27.csv[m
+# „České” instance
+## Uživatelé za instanci:
+- mastodonczech.cz: ~4,7 tis. (rozdíl ~24)
+- mastodon.arch-linux.cz: ~2,6 tis. (rozdíl ~104)
+- nasface.cz: ~1,3 tis. (rozdíl ~0)
+- witter.cz: ~1,2 tis. (rozdíl ~21)
+- cztwitter.cz: ~606 (rozdíl ~5)
+- mastodon.pirati.cz: ~353 (rozdíl ~1)
+- gomastodon.cz: ~227 (rozdíl ~227)
+- f.cz: ~74 (rozdíl ~0)
+- mastodon.macsnet.cz: ~52 (rozdíl ~0)
+- toot.whatever.cz: ~50 (rozdíl ~0)
+- lgbtcz.social: ~36 (rozdíl ~1)
+- kompost.cz: ~33 (rozdíl ~-1)
+- boskovice.social: ~22 (rozdíl ~0)
+- propulse.club: ~21 (rozdíl ~0)
+- mastodon.1984.cz: ~20 (rozdíl ~0)
+- mastodon.rozhlas.cz: ~18 (rozdíl ~0)
+- mastodon.queerclub.cz: ~17 (rozdíl ~0)
+- fediverse.cz: ~15 (rozdíl ~15)
+- kocour.club: ~13 (rozdíl ~0)
+- mastodon.urbancloud.cz: ~13 (rozdíl ~0)
+- mastodon.telekomunikace.cz: ~11 (rozdíl ~0)
+- ajtaci.club: ~9 (rozdíl ~0)
+- mastodon.darksheep.social: ~8 (rozdíl ~0)
+- mastodon.posvic.cz: ~7 (rozdíl ~0)
+- social.meyer.cz: ~6 (rozdíl ~0)
+- social.filik.eu: ~6 (rozdíl ~1)
+- mastodon.starnet.cz: ~4 (rozdíl ~0)
+- blogator.com: ~4 (rozdíl ~0)
+- mastodon.vyboh.net: ~4 (rozdíl ~0)
+- social.gwei.cz: ~4 (rozdíl ~0)
+- hatedon.1984.cz: ~4 (rozdíl ~0)
+- mastodon.loutaci.cz: ~3 (rozdíl ~3)
+- spondr.cz: ~3 (rozdíl ~1)
+- social.toxwat.cz: ~3 (rozdíl ~1)
+- mastodon.hinata.cz: ~3 (rozdíl ~0)
+- hlidacstatu.social: ~3 (rozdíl ~0)
+- mastodon.starlink.cz: ~2 (rozdíl ~0)
+- social.bobek.cz: ~2 (rozdíl ~0)
+- mastodon.train.cz: ~2 (rozdíl ~0)
+- kiklhorn.cz: ~2 (rozdíl ~0)
+- mastodon.stan.cz: ~2 (rozdíl ~2)
+- mastodon.skorpil.cz: ~2 (rozdíl ~0)
+- mastodon.kiklhorn.cz: ~2 (rozdíl ~0)
+- mastodon.haxo.cz: ~2 (rozdíl ~0)
+- mutant.cz: ~2 (rozdíl ~0)
+- rodina-sucha.cz: ~1 (rozdíl ~0)
+- mastodon.zs-studanka.cz: ~1 (rozdíl ~0)
+- social.taborsky.cz: ~1 (rozdíl ~0)
+- social.lukacern.cz: ~1 (rozdíl ~1)
+- petrzprahy.cz: ~1 (rozdíl ~1)
+## Uživatelé celkem:
+- ~11 tis. (rozdíl ~407)
+## Info – porovnávají se snapshoty:
+- ./mastodon-list--2023-03-27.csv
+- ./mastodon-list--2023-02-27.csv
