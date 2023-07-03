@@ -13,7 +13,8 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 	"mastodon.vyboh.net",
 	"praha.social",
 	"propulse.club",
-	"social.filik.eu"
+	"social.filik.eu",
+	// "zpravobot.news" ?? boti, ale ti jsou i jinde
 ];
 
 $.api()
