@@ -19,18 +19,19 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 
 $.api()
 .command("compare-last", "Porovná dva posledni snapshoty (defaultně jen „.cz”)")
-.option("--all", "Zahrnout i ne-CZ.")
+	.option("--filter", "Zahrnout i ne-CZ. Možnosti `cz`, `sk` a kombinace s `+`, jinak `*` pro vše", "cz")
 .option("--only-changes", "Vypíše instance jen pokud došlo od posledního snapshotu ke změně.")
 .option("--limit [limit]", "Vypíše maximálně daný počet instancí (0 pro zrušení limitu)")
 .option("--shift, -s", "prints nth compare (defaults to 0)")
-.action(function({ all= false, shift= 0, ["only-changes"]: onlyChanges= false, limit= 0 }= {}){
+.action(function({ filter, shift= 0, ["only-changes"]: onlyChanges= false, limit= 0 }= {}){
 	if(limit) limit+= 1;
+	filter= filter==="*" ? "*" : filter.split("+");
 	const [ name_previous, name_last ]= s.$()
 		.ls("./mastodon-list--*.csv")
 		.slice(-2 - shift);
 	const [ previous, last ]= [ name_previous, name_last ]
 		.map(fileToData)
-		.map(data=> all ? data : data.filter(([ domain ])=> isCz(domain)));
+		.map(data=> filter==="*" ? data : data.filter(([ domain ])=> ( filter.includes("cz") && isCz(domain) )  || ( filter.includes("sk") && domain.endsWith(".sk") )));
 
 	const css= echo.css`
 		.h1 { color: lightblue; display: list-item; list-style: "# "; }
@@ -40,7 +41,8 @@ $.api()
 		.diff, .info { color: gray; }
 	`;
 	const number_style= new Intl.NumberFormat('cs-CZ', { notation: "compact", maximumFractionDigits: 2 });
-	echo(`%c${all?"Všechny":"„České”"} instance`, css.h1);
+	const title= filter==="*" ? "Všechny" : filter.map(l=> l==="cz" ? "„České”" : ( l==="sk" ? "„Slovenské”" : "???" )).join("&");
+	echo(`%c${title} instance`, css.h1);
 	echo("%cUživatelé za instanci:", css.h2);
 	for(const row of last){
 		const [ domain, users_now ]= getDomainUsers(row);
