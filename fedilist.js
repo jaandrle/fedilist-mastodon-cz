@@ -5,6 +5,7 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 	"blogator.com",
 	"boskovice.social",
 	"czech.social",
+	"czech-press.eu",
 	"fedi.skladka.net",
 	"hlidacstatu.social",
 	"kocour.club",
