@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[Nolog](nolog.cz) má také statistiky → [vybrané české instance](https://grafana.nolog.cz/public-dashboards/211b01cf316b4e1fbcb17ca0f24cd0b8?orgId=0).",
   "main": "fedilist.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
