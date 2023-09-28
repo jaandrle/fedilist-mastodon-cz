@@ -20,7 +20,7 @@ const not_dot_cz= [ //instance, které nekončí „.cz”, ale jsou české
 
 $.api()
 .command("compare-last", "Porovná dva posledni snapshoty (defaultně jen „.cz”)")
-	.option("--filter", "Zahrnout i ne-CZ. Možnosti `cz`, `sk` a kombinace s `+`, jinak `*` pro vše", "cz")
+.option("--filter", "Zahrnout i ne-CZ. Možnosti `cz`, `sk` a kombinace s `+`, jinak `*` pro vše", "cz")
 .option("--only-changes", "Vypíše instance jen pokud došlo od posledního snapshotu ke změně.")
 .option("--limit [limit]", "Vypíše maximálně daný počet instancí (0 pro zrušení limitu)")
 .option("--shift, -s", "prints nth compare (defaults to 0)")
@@ -65,12 +65,15 @@ $.api()
 	$.exit(0);
 })
 .command("snapshot <name>", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
+.option("--commit", "Rovnou i zagituje")
 .example("snapshot 2022-11-22")
-.action(function(name){
+.action(function(name= (new Date()).toISOString().replace(/:\d\d\..*/, ""), { commit= false }){
 	fetch("http://demo.fedilist.com/instance/csv?q=&ip=&software=mastodon&registrations=&onion=&sort=users")
 	.then(r=> r.text())
 	.then(function process(data){
-		s.echo(data).to(`./mastodon-list--${name}.csv`);
+		const file= `./mastodon-list--${name}.csv`;
+		s.echo(data).to(file);
+		if(commit) gitCommit(file);
 		$.exit(0);
 	});
 })
@@ -80,3 +83,17 @@ function usersCount(data){ return data.reduce((acc, row)=> acc+Number(row[3]), 0
 function fileToData(file_name){ return s.cat(file_name).split("\n").map(line=> line.split(",")).filter(([ _, state ])=> state==="up"); }
 function isCz(candidate){ return /\.cz$/.test(candidate) || not_dot_cz.indexOf(candidate) !== -1; }
 function getDomainUsers(row){ if(!row) return [ null, 0 ]; const d= row[0]; const u= Number(row[3]); return [ d, u ]; }
+
+export function gitCommit(file, des= "not specified"){
+	if(s.run`git diff --numstat`.trim()){
+		echo("Diff to save");
+		s.run`git config user.name "Bot"`
+		s.run`git config user.email "${"zc.murtnec@naj.elrdna".split("").reverse().join("")}"`
+		s.run`git add ${file}`;
+		s.run`git commit -m "Updated ${file} by bot – ${des}"`;
+		s.run`git push`;
+		s.run`git config --remove-section user`
+	} else {
+		echo("Nothig todo");
+	}
+}
