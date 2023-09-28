@@ -64,7 +64,7 @@ $.api()
 	echo(`%c${name_previous}`, css.info+css.li);
 	$.exit(0);
 })
-.command("snapshot <name>", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
+.command("snapshot [name]", "Stáhne aktuální `csv` soubor a uloží jej `./mastodon-list--name.csv`.")
 .option("--commit", "Rovnou i zagituje")
 .example("snapshot 2022-11-22")
 .action(function(name= (new Date()).toISOString().replace(/:\d\d\..*/, ""), { commit= false }){
