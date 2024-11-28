@@ -1,23 +1,23 @@
 {
-  "name": "fedilist-mastodon-cz",
-  "version": "1.0.0",
-  "description": "[Nolog](nolog.cz) má také statistiky → [vybrané české instance](https://grafana.nolog.cz/public-dashboards/211b01cf316b4e1fbcb17ca0f24cd0b8?orgId=0).",
-  "main": "fedilist.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/jaandrle/fedilist-mastodon-cz.git"
-  },
-  "author": "Jan Andrle <andrle.jan@centrum.cz>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jaandrle/fedilist-mastodon-cz/issues"
-  },
-  "homepage": "https://github.com/jaandrle/fedilist-mastodon-cz#readme",
-  "dependencies": {
-    "nodejsscript": "github:jaandrle/nodejsscript#0e368f4"
-  }
+	"name": "fedilist-mastodon-cz",
+	"version": "2.0.0",
+	"description": "[Nolog](nolog.cz) má také statistiky → [vybrané české instance](https://grafana.nolog.cz/public-dashboards/211b01cf316b4e1fbcb17ca0f24cd0b8?orgId=0).",
+	"main": "fedilist.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/jaandrle/fedilist-mastodon-cz.git"
+	},
+	"author": "Jan Andrle <andrle.jan@centrum.cz>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jaandrle/fedilist-mastodon-cz/issues"
+	},
+	"homepage": "https://github.com/jaandrle/fedilist-mastodon-cz#readme",
+	"dependencies": {
+		"nodejsscript": "~1.0"
+	}
 }
